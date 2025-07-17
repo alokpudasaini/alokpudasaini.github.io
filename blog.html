@@ -1,36 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Page Under Design</title>
-    <style>
-        body {
-            background-color: #f9f9f9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-            color: #333;
-        }
-        .message {
-            text-align: center;
-        }
-        .message h1 {
-            font-size: 36px;
-            color: #e67e22;
-        }
-        .message p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="message">
-        <h1>🚧 Page Under Design 🚧</h1>
-        <p>This page is currently being designed. Please check back soon for updates!</p>
-    </div>
-</b
+  <head>
+    <title>Blog - Alok Pudasaini</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+	<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+			<h1 id="colorlib-logo"><a href="index.html">alok<span>.</span></a></h1>
+			<nav id="colorlib-main-menu" role="navigation">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="photography.html">Photography</a></li>
+					<li class="colorlib-active"><a href="blog.html">Blog</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</aside> <!-- END COLORLIB-ASIDE -->
+		<div id="colorlib-main">
+			<section class="ftco-section">
+			  <div class="container">
+			    <div class="row" id="blog-cards">
+			      <!-- Blog card -->
+			      <div class="col-md-4 d-flex">
+			        <div class="blog-entry" onclick="openArticle('between_clay_and_cloud.html')">
+			          <img src="images/clayandcloud.jpg" class="block-20" style="border-radius: 12px;">
+			          <div class="text mt-3">
+			            <h3 class="heading">Between Clay and Cloud</h3>
+			          </div>
+			        </div>
+			      </div>
+			      <!-- Add more blog cards here -->
+				  <div class="col-md-4 d-flex">
+			        <div class="blog-entry" onclick="openArticle('ai_enables_smarter_construction.html')">
+			          <img src="images/aienables.jpg" class="block-20" style="border-radius: 12px;">
+			          <div class="text mt-3">
+			            <h3 class="heading">AI Enables Smarter Construction</h3>
+			          </div>
+			        </div>
+				  </div>
+				  <div class="col-md-4 d-flex">
+			        <div class="blog-entry" onclick="openArticle('mimetic_theory.html')">
+			          <img src="images/mimetictheory.jpg" class="block-20" style="border-radius: 12px;">
+			          <div class="text mt-3">
+			            <h3 class="heading">Understanding Mimetic Theory: Why We Want What Others Want</h3>
+			          </div>
+			        </div>
+				  </div>
+				  <div class="col-md-4 d-flex">
+			        <div class="blog-entry" onclick="openArticle('johatsu.html')">
+			          <img src="images/johatsu.jpg" class="block-20" style="border-radius: 12px;">
+			          <div class="text mt-3">
+			            <h3 class="heading">The Mysterious Disappearances in Japan: “Johatsu”</h3>
+			          </div>
+			        </div>
+				  </div>	
+			    </div>
+			  </div>
+			</section>
+
+		<!-- Article Modal -->
+		<div id="articleModal" class="article-modal" onclick="closeArticle()">
+		  <div class="article-content" onclick="event.stopPropagation();">
+		    <span class="close-btn" onclick="closeArticle()">&times;</span>
+		    <div id="articleBody"></div>
+		  </div>
+		</div>
+		</div>	
+	</div><!-- END COLORLIB-PAGE -->
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <style>
+	.blog-entry {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-entry:hover {
+  transform: translateY(-5px);
+}
+
+.blog-entry img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+  .article-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .article-content {
+    background-color: #fff;
+    border-radius: 12px;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 30px;
+    overflow-y: scroll;
+    position: relative;
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  .article-content::-webkit-scrollbar {
+    display: none;             /* Chrome/Safari */
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .excerpt {
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
+
+<script>
+  function openArticle(filename) {
+    fetch(`article/${filename}`)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("articleBody").innerHTML = data;
+        document.getElementById("articleModal").style.display = "flex";
+      })
+      .catch(error => {
+        document.getElementById("articleBody").innerHTML = "<p>Failed to load article.</p>";
+        document.getElementById("articleModal").style.display = "flex";
+      });
+  }
+
+  function closeArticle() {
+    document.getElementById("articleModal").style.display = "none";
+    document.getElementById("articleBody").innerHTML = "";
+  }
+</script>
+
+  </body>
+</html>
