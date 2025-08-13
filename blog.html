@@ -86,12 +86,16 @@
 			</section>
 
 		<!-- Article Modal -->
-		<div id="articleModal" class="article-modal" onclick="closeArticle()">
-		  <div class="article-content" onclick="event.stopPropagation();">
-		    <span class="close-btn" onclick="closeArticle()">&times;</span>
-		    <div id="articleBody"></div>
-		  </div>
-		</div>
+    <div id="articleModal" class="article-modal" onclick="closeArticle()">
+      <div class="article-content" onclick="event.stopPropagation();">
+        <span class="close-btn" onclick="closeArticle()">&times;</span>
+        <img id="modalImage" src="" alt="Blog Image" style="width: 250px; height: auto; display: block; margin: 0 auto 1rem auto; border-radius: 12px;">
+        <h3 id="modalTitle" style="text-align: center; margin-bottom: 0.5rem;"></h3>
+        <p id="articleLink" style="text-align: center; margin-bottom: 1rem;"></p>
+        <div id="articleBody" style="max-height:60vh; overflow-y:auto;"></div>
+      </div>
+    </div>
+
 		</div>	
 	</div><!-- END COLORLIB-PAGE -->
   <!-- loader -->
