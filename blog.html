@@ -49,7 +49,7 @@
 			    <div class="row" id="blog-cards">
 			      <!-- Blog card -->
 			      <div class="col-md-4 d-flex">
-			        <div class="blog-entry" onclick="openArticle('between_clay_and_cloud.html')">
+			        <div class="blog-entry" onclick="openArticle('between_clay_and_cloud.html', 'images/clayandcloud.jpg', 'Between Clay and Cloud', 'https://risingnepaldaily.com/news/65527')">
 			          <img src="images/clayandcloud.jpg" class="block-20" style="border-radius: 12px;">
 			          <div class="text mt-3">
 			            <h3 class="heading">Between Clay and Cloud</h3>
@@ -58,7 +58,7 @@
 			      </div>
 			      <!-- Add more blog cards here -->
 				  <div class="col-md-4 d-flex">
-			        <div class="blog-entry" onclick="openArticle('ai_enables_smarter_construction.html')">
+			        <div class="blog-entry" onclick="openArticle('ai_enables_smarter_construction.html', 'images/aienables.jpg', 'AI enables Smarter Construction', 'https://risingnepaldaily.com/news/64369')">
 			          <img src="images/aienables.jpg" class="block-20" style="border-radius: 12px;">
 			          <div class="text mt-3">
 			            <h3 class="heading">AI Enables Smarter Construction</h3>
@@ -197,17 +197,21 @@
 </style>
 
 <script>
-  function openArticle(filename) {
-    fetch(`article/${filename}`)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("articleBody").innerHTML = data;
-        document.getElementById("articleModal").style.display = "flex";
-      })
-      .catch(error => {
-        document.getElementById("articleBody").innerHTML = "<p>Failed to load article.</p>";
-        document.getElementById("articleModal").style.display = "flex";
-      });
+  function openArticle(filename, imgSrc, title, newspaperURL) {
+  document.getElementById("modalImage").src = imgSrc;
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("articleLink").innerHTML = `<a href="${newspaperURL}" target="_blank">Read in Newspaper</a>`;
+
+  fetch(`article/${filename}`)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("articleBody").innerHTML = data;
+      document.getElementById("articleModal").style.display = "flex";
+    })
+    .catch(error => {
+      document.getElementById("articleBody").innerHTML = "<p>Failed to load article.</p>";
+      document.getElementById("articleModal").style.display = "flex";
+    });
   }
 
   function closeArticle() {
